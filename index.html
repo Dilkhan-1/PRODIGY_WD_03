@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe | by Flux</title>
 
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="./assets/check.png" />
+          
     <!-- CSS file  -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
     
@@ -13,47 +16,19 @@
   <body>
     <nav>
       <ul>
-        <li><a href="#">Tic-Tac-Toe Game</a></li>
+        <li>TicTacToe Game</li>
       </ul>
     </nav>
-    <div class="mainContainer">
-      <div class="board">
-        <div id="placeholder"></div>
-      </div>
-      <div class="score">
-        Player X: <span id="playerXScore"></span><br/>
-      </div>
-    </div>
-
-    <!-- <table id="scoreboard" align="center" >
-      <tr>
-        <td>Player 1</td>
-        <td width="30">&nbsp;</td>
-        <td>Player 2</td>
-      </tr>
-      <tr>
-        <td class="score" id="player1">0</td>
-        <td>&nbsp;</td>
-        <td class="score" id="player2">0</td>
-      </tr>
-    </table>
-    <div id="placeholder"></div>
-    <button onclick="restart()">Reset</button>
-    <select onchange="restart(this.value)">
-      <option value="2">2 X 2</option>
-      <option value="3" selected="">3 X 3</option>
-      <option value="4">4 X 4</option>
-      <option value="5">5 X 5</option>
-      <option value="6">6 X 6</option>
-    </select> -->
-
-
-    <!-- <h1 class="current_player">X</h1>
+    <h1 class="current_player"></h1>
     <h1 class="game_over"></h1>
     <div id="tic_tac_toe"></div>
+    <div id="new">
+      <button class="new_game" id="start" onclick="loadTheGame()">Start!</button>
+    </div>
     <div id="restart">
-      <button class="new_game" onclick="loadTheGame()">New Game</button>
-    </div> -->
+      <button class="reset_game" id="reset" onclick="resetGame()">Reset!</button>
+    </div>
+
 
     <!-- JavaScript file  -->
     <script src="script.js"></script>

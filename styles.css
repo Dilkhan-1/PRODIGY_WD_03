@@ -1,111 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap');
 
-*{
-  margin: 0;
-  padding: 0;
-}
-body {
-    /* font: normal 16px comic sans ms; */
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-nav {
-  background-color: #23916b;
-  color: whitesmoke;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1%;
-  height: 65px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 28px;
-}
-
-nav ul {
-  list-style-type: none;
-}
-
-nav li {
-  cursor: pointer;
-}
-
-nav a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.mainContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 3vw;
-}
-
-.board {
-  margin: 0 10%;
-  margin-left: 0;
-}
-
-.score {
-  font-family: 'Baloo Bhaina 2', cursive;
-  font-size: 2.5rem;
-}
-#tic-tac-toe {
-  border-spacing: 0px;
-  border-collapse: separate;
-  margin: 30px auto;
-  }
-
-#tic-tac-toe td {
-  border: 2px solid #000;
-  height: 100px;
-  width: 100px;
-  text-align: center;
-  font: bold 60px comic sans ms;
-}
-
-#tic-tac-toe td:hover{
-  background-color: #e9f1ee;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 
-#tic-tac-toe tr:first-child td {
-  border-top: none;
-}
-#tic-tac-toe tr:last-child td {
-  border-bottom: none;
-}
-#tic-tac-toe tr td:first-child {
-  border-left: none;
-}
-#tic-tac-toe tr td:last-child {
-  border-right: none;
-}
-#tic-tac-toe td.X {
-  color: #ed676b;
-}
-#tic-tac-toe td.O {
-  color: #23916b;
-}
-#scoreboard .score {
-  text-align: center;
-  font-size: 30px;
-}
-#scoreboard .score#player1 {
-  color: #ed676b;
-}
-#scoreboard .score#player2 {
-  color: #23916b;
-}
-
-  /* * {
+  * {
     font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
   }
   
   body {
-    background-color: #000;
-    color: aliceblue;
+    background-color: #E0F2E9;
+    color: #02111B;
   }
   
+  nav{
+    background-color: #02111B;
+    color: white;
+    height: 65px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+
   #tic_tac_toe {
     width: 400px;
     height: 400px;
@@ -134,30 +57,22 @@ nav a {
     cursor: pointer;
   }
   
-  .current_player {
-    font-size: 60px;
+  .current_player{
+    font-size: 40px;
     margin: 0;
     margin-top: 30px;
     text-align: center;
     font-weight: 600;
-    animation: animate 1s infinite ease-in;
+    
   }
-  
-  @keyframes animate {
-    from {
-        color: inherits;
-    }
-  
-    to {
-        color: transparent;
-    }
-  }
-  
+
   .x_class {
+    font-family: 'Roboto', sans-serif;
     color: #4287f5;
   }
   
   .o_class {
+    font-family: 'Roboto', sans-serif;
     color: #bf67bc;
   }
   
@@ -269,10 +184,7 @@ nav a {
     transform: rotate(-45deg);
     left: -40px;
   }
-  
-  
-  
-  
+
   .top_strike_O::after {
     content: '';
     border-bottom: 4px solid #bf67bc;
@@ -369,4 +281,18 @@ nav a {
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
-  } */
+  }
+.reset_game {
+    border: none;
+    background: snow;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    width: 300px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 50%;
+    margin-top: 3%;
+  }
