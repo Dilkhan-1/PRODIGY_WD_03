@@ -2,297 +2,300 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 
-  * {
-    font-family: 'Manrope', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    background-color: #E0F2E9;
-    color: #02111B;
-  }
-  
-  nav{
-    background-color: #02111B;
-    color: white;
-    height: 65px;
-    font-size: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 12px;
+* {
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #E0F2E9;
+  color: #02111B;
+}
+
+nav{
+  background-color: #02111B;
+  color: white;
+  height: 65px;
+  font-size: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
 }
 
 nav ul{
-    list-style-type: none;
+  list-style-type: none;
+}
+
+#tic_tac_toe {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 60px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-outer {
+  display: flex;
+  flex-direction: initial;
+  flex: 1;
+}
+
+.box {
+  flex: 1 1;
+  border: 2px solid darkgray;
+  font-size: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.current_player{
+  font-size: 40px;
+  margin: 0;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 600;
+  
+}
+
+.x_class {
+  font-family: 'Roboto', sans-serif;
+  color: #4287f5;
+}
+
+.o_class {
+  font-family: 'Roboto', sans-serif;
+  color: #bf67bc;
+}
+
+.game_over {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 35px;
+  display: none;
+}
+
+.box:first-child {
+  border-left: none;
+}
+
+.box:last-child {
+  border-right: none;
+}
+
+.box_0_0,
+.box_0_1,
+.box_0_2 {
+  border-top: none;
+}
+
+.box_2_0,
+.box_2_1,
+.box_2_2 {
+  border-bottom: none;
 }
 
 
-  #tic_tac_toe {
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-    margin-top: 60px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .box-outer {
-    display: flex;
-    flex-direction: initial;
-    flex: 1;
-  }
-  
-  .box {
-    flex: 1 1;
-    border: 2px solid darkgray;
-    font-size: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .current_player{
-    font-size: 40px;
-    margin: 0;
-    margin-top: 30px;
-    text-align: center;
-    font-weight: 600;
-    
-  }
+/* Lines Style for X */
+.top_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 55px;
+  width: 400px;
+}
 
-  .x_class {
-    font-family: 'Roboto', sans-serif;
-    color: #4287f5;
-  }
-  
-  .o_class {
-    font-family: 'Roboto', sans-serif;
-    color: #bf67bc;
-  }
-  
-  .game_over {
-    text-align: center;
-    margin-top: 200px;
-    font-size: 35px;
-    display: none;
-  }
-  
-  .box:first-child {
-    border-left: none;
-  }
-  
-  .box:last-child {
-    border-right: none;
-  }
-  
-  .box_0_0,
-  .box_0_1,
-  .box_0_2 {
-    border-top: none;
-  }
-  
-  .box_2_0,
-  .box_2_1,
-  .box_2_2 {
-    border-bottom: none;
-  }
-  
-  .top_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 55px;
-    width: 400px;
-  }
-  
-  .middle_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-  }
-  
-  .bottom_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 325px;
-    width: 400px;
-  }
-  
-  .left_vertical_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-    transform: rotate(90deg);
-    left: -130px;
-  }
-  
-  .middle_vertical_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-    transform: rotate(90deg);
-    left: 5px;
-  }
-  
-  .right_vertical_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-    transform: rotate(90deg);
-    left: 140px;
-  }
-  
-  .x_cross_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 198px;
-    width: 460px;
-    transform: rotate(45deg);
-    left: -20px;
-  }
-  
-  .y_cross_strike_X::after {
-    content: '';
-    border-bottom: 4px solid #4287f5;
-    position: absolute;
-    height: 10px;
-    top: 198px;
-    width: 460px;
-    transform: rotate(-45deg);
-    left: -40px;
-  }
+.middle_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+}
 
-  .top_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 55px;
-    width: 400px;
-  }
-  
-  .middle_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-  }
-  
-  .bottom_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 323px;
-    width: 400px;
-  }
-  
-  .left_vertical_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-    transform: rotate(90deg);
-    left: -130px;
-  }
-  
-  .middle_vertical_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-    transform: rotate(90deg);
-    left: 5px;
-  }
-  
-  .right_vertical_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 190px;
-    width: 400px;
-    transform: rotate(90deg);
-    left: 140px;
-  }
-  
-  .x_cross_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 198px;
-    width: 460px;
-    transform: rotate(45deg);
-    left: -20px;
-  }
-  
-  .y_cross_strike_O::after {
-    content: '';
-    border-bottom: 4px solid #bf67bc;
-    position: absolute;
-    height: 10px;
-    top: 192px;
-    width: 475px;
-    transform: rotate(-45deg);
-    left: -45px;
-  }
-  
-  .new_game {
-    border: none;
-    background: snow;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 12px;
-    width: 300px;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-  }
+.bottom_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 325px;
+  width: 400px;
+}
+
+.left_vertical_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+  transform: rotate(90deg);
+  left: -130px;
+}
+
+.middle_vertical_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+  transform: rotate(90deg);
+  left: 5px;
+}
+
+.right_vertical_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+  transform: rotate(90deg);
+  left: 140px;
+}
+
+.x_cross_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 198px;
+  width: 460px;
+  transform: rotate(45deg);
+  left: -20px;
+}
+
+.y_cross_strike_X::after {
+  content: '';
+  border-bottom: 4px solid #4287f5;
+  position: absolute;
+  height: 10px;
+  top: 198px;
+  width: 460px;
+  transform: rotate(-45deg);
+  left: -40px;
+}
+
+
+/* Lines Style for O */
+.top_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 55px;
+  width: 400px;
+}
+
+.middle_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+}
+
+.bottom_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 323px;
+  width: 400px;
+}
+
+.left_vertical_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+  transform: rotate(90deg);
+  left: -130px;
+}
+
+.middle_vertical_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+  transform: rotate(90deg);
+  left: 5px;
+}
+
+.right_vertical_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 190px;
+  width: 400px;
+  transform: rotate(90deg);
+  left: 140px;
+}
+
+.x_cross_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 198px;
+  width: 460px;
+  transform: rotate(45deg);
+  left: -20px;
+}
+
+.y_cross_strike_O::after {
+  content: '';
+  border-bottom: 4px solid #bf67bc;
+  position: absolute;
+  height: 10px;
+  top: 192px;
+  width: 475px;
+  transform: rotate(-45deg);
+  left: -45px;
+}
+
+.new_game {
+  border: none;
+  background: snow;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px;
+  width: 300px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
 .reset_game {
-    border: none;
-    background: snow;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    padding: 12px;
-    width: 300px;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-left: 50%;
-    margin-top: 3%;
-  }
+  border: none;
+  background: snow;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 12px;
+  width: 300px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 50%;
+  margin-top: 3%;
+}
